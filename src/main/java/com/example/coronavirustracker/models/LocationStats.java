@@ -4,10 +4,17 @@ public class LocationStats {
 	
 	private String State;
 	private String Country;
+	private int diffFromPrevDay;
 	@Override
 	public String toString() {
-		return "LocationStats [State=" + State + ", Country=" + Country + ", latestTotalCases=" + latestTotalCases
-				+ "]";
+		return "LocationStats [State=" + State + ", Country=" + Country + ", diffFromPrevDay=" + diffFromPrevDay
+				+ ", latestTotalCases=" + latestTotalCases + "]";
+	}
+	public int getDiffFromPrevDay() {
+		return diffFromPrevDay;
+	}
+	public void setDiffFromPrevDay(int diffFromPrevDay) {
+		this.diffFromPrevDay = diffFromPrevDay;
 	}
 	private int latestTotalCases;
 	public String getState() {

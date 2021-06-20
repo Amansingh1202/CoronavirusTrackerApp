@@ -9,24 +9,27 @@
   </head>
 
   <body>
+  <div class="container">
   <h1>Coronavirus Tracker</h1>
     <div class="jumbotron">
   <h1 class="display-4" th:text="${totalReportedCases}"></h1>
   <p class="lead">Total cases reported as of today</p>
 </div>
-    <table>
+    <table class="table">
       <tr>
         <th>State</th>
         <th>Country</th>
         <th>Total Cases Reported</th>
+        <th>Changes since last Day</th>
       </tr>
       <tr th:each="locationStat : ${locationStats}">
         <td th:text="${locationStat.state}"></td>
         <td th:text="${locationStat.country}"></td>
         <td th:text="${locationStat.latestTotalCases}">0</td>
+        <td th:text="${locationStat.diffFromPrevDay}">0</td>
       </tr>
     </table>
-  
+  </div>
   </body>
 
 </html>
